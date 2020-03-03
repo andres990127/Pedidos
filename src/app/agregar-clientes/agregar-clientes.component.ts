@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ClientesComponent } from '../clientes/clientes.component';
+import { Clientes } from '../Models/clientes';
+import { ClientesService } from '../services/clientes.service';
 
 @Component({
   selector: 'app-agregar-clientes',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarClientesComponent implements OnInit {
 
-  constructor() { }
+  formularioAgregar: FormGroup;
+  cliente: Clientes = new Clientes();
+  constructor(private fb: FormBuilder, public clientesServicio: ClientesService) { }
 
   ngOnInit() {
+    this.formularioAgregar = this.fb.group({
+      nombre:['', Validators.required],
+      apellido:['', Validators.required],
+      direccion:['', Validators.required]
+    })
+  }
+
+  agregar(){
+    this.cliente = this.formularioAgregar.value as Clientes;
+    this.clientesServicio.agregarLocalStorage(this.cliente)
+    this.formularioAgregar.reset();
   }
 
 }

@@ -9,6 +9,8 @@ import { ProductosComponent } from './productos/productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { HomeComponent } from './home/home.component';
 import { AgregarClientesComponent } from './agregar-clientes/agregar-clientes.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms' /* Escribimos este Manualmente */
+import { ClientesService } from './services/clientes.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,13 @@ import { AgregarClientesComponent } from './agregar-clientes/agregar-clientes.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule, /* Escribimos e importamos este Manualmente */
+    FormsModule /* Escribimos e importamos este Manualmente */
   ],
-  providers: [],
+  providers: [
+    ClientesService /* Escribimos e importamos este Manualmente */
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
