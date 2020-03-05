@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from '../services/productos.service';
+import { Productos } from '../Models/productos';
 
 @Component({
   selector: 'app-productos',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productos.component.scss']
 })
 export class ProductosComponent implements OnInit {
-
-  constructor() { }
+  productos: Array<Productos> = new Array <Productos>();
+  constructor(public productosServicio: ProductosService) { }
 
   ngOnInit() {
+    this.productos = this.productosServicio.productosLocalStorage
   }
 
 }
