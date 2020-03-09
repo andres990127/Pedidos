@@ -15,4 +15,10 @@ export class ProductosComponent implements OnInit {
     this.productos = this.productosServicio.productosLocalStorage
   }
 
+  buscarProductos(nombreBuscar){
+    this.productos = this.productosServicio.productosLocalStorage.filter(producto=>{
+      return producto.nombre.toLocaleLowerCase().includes(nombreBuscar.toLocaleLowerCase())
+    })
+  }
+
 }
