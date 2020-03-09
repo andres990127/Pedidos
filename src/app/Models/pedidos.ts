@@ -9,7 +9,16 @@ export class Pedido
     total: number;
     pedidoDetalle: Array<PedidoDetalle>
 
-    constructor(){
+    constructor(datos? : Pedido){
+        if (datos != null)
+        {
+          this.pedidoID = datos.pedidoID
+          this.clienteID = datos.clienteID
+          this.nombreCliente = datos.nombreCliente
+          this.pedidoDetalle = datos.pedidoDetalle
+          this.total = datos.total
+          return
+        }
         this.pedidoID = this.pedidoID
         this.clienteID = this.clienteID
         this.nombreCliente = this.nombreCliente
