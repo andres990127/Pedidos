@@ -37,6 +37,18 @@ export class Pedido
       else{
         this.pedidoDetalle.push(pedidoDetalle)
       }
-      
+      this.actualizadTotal();
+    }
+
+    actualizadTotal()
+    {
+      this.total = 0 
+/*       for(let producto of this.pedidoDetalle){
+        this.total = this.total + producto.total;
+      } */
+
+      this.pedidoDetalle.forEach (producto=>{
+        this.total = this.total + producto.total;
+      })
     }
 }

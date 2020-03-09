@@ -12,5 +12,6 @@ export class PedidosComponent implements OnInit {
   constructor(public pedidosServicio: PedidosService) { }
 
   ngOnInit() {
+
   } 
 }
