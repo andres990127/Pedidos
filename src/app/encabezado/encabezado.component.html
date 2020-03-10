@@ -4,7 +4,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav flex-row w-100">
         <li class="nav-item">
           <a class="nav-link" routerLink ="/" routerLinkActive="active" [routerLinkActiveOptions] = "{exact: true}">Home</a> <!-- href= # se cambia por routerLink ="/link_a_viajar_con_click" -->
         </li>
@@ -17,8 +17,8 @@
         <li class="nav-item">
             <a class="nav-link" routerLink ="/pedidos" routerLinkActive="active">Pedido Actual</a> <!-- href= # se cambia por routerLink ="/link_a_viajar_con_click" -->
           </li>
-          <li class = "navbar-text">
-            {{this.pedidosServicio.pedido.nombreCliente}}
+          <li class = "navbar-text ml-auto p-2">
+             Cliente: {{this.pedidosServicio.pedido.nombreCliente}}
           </li>
       </ul>
     </div>

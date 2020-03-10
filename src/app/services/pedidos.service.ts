@@ -47,6 +47,6 @@ export class PedidosService {
     {
       return new Array<Pedido>();
     }
-    return pedidos;
+    return pedidos.sort((a,b)=> b.pedidoID - a.pedidoID); /* Se organizan para que el primero sea el mas reciente */
   }
 }
