@@ -20,4 +20,8 @@ export class PedidosComponent implements OnInit {
     this.pedidosServicio.pedido.actualizadCantidades(posicion);
     this.pedidosServicio.guardarLocalStorage();
   }
+
+  guardar(){
+    this.pedidosServicio.guardarPedido();
+  }
 }
