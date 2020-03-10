@@ -60,4 +60,10 @@ export class Pedido
         this.total = this.total + producto.total;
       })
     }
+
+    public actualizadCantidades(posicion:number)
+    {
+      this.pedidoDetalle[posicion].total = this.pedidoDetalle[posicion].cantidad * this.pedidoDetalle[posicion].precio
+      this.actualizadTotal();
+    }
 }
